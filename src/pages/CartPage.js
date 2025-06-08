@@ -11,6 +11,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import "../styles/CartStyles.css";
 import { buyCourse } from "../services/payment";
+import axiosApi from "../services/axios";
 
 const CartPage = () => {
   const [auth] = useAuth();
@@ -23,7 +24,7 @@ const CartPage = () => {
   
   const getToken = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/braintree/token");
+      const { data } = await axiosApi.get("/api/v1/product/braintree/token");
       console.log("Received client token:", data?.clientToken);
       setClientToken(data?.clientToken);
     } catch (error) {

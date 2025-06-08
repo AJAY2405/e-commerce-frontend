@@ -17,11 +17,16 @@ const Login = () => {
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log("axiosApi = ",axiosApi)
     try {
       const res = await axiosApi.post("/api/v1/auth/login", {
         email,
         password,
       });
+
+      console.log("Login res = ",res);
+
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
         setAuth({
