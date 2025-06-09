@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import axiosApi from "./axios";
 // import { COURSE_VERIFY_API } from "../constants/apis"; // update the path as per your project
 
 function loadScript(src) {
@@ -33,8 +34,8 @@ export async function buyCourse(token, cart) {
       "https://checkout.razorpay.com/v1/checkout.js"
     );
 
-    console.log("Hello");
-    console.log("cart items = ", cart);
+    // console.log("Hello");
+    // console.log("cart items = ", cart);
 
     if (!res) {
       toast.error("Razorpay SDK failed to load. Are you online?");
@@ -55,11 +56,11 @@ export async function buyCourse(token, cart) {
       cart
     );
 
-    console.log("orderResponse", orderResponse);
+    // console.log("orderResponse", orderResponse);
 
     if (!orderResponse.data.success) {
       toast.error(orderResponse.data.message);
-      console.log("buyCourse -> orderResponse", orderResponse);
+      // console.log("buyCourse -> orderResponse", orderResponse);
       toast.dismiss(toastId);
       return;
     }
@@ -78,7 +79,7 @@ export async function buyCourse(token, cart) {
       //     email: userDetails?.email,
       //   },
       handler: async function (response) {
-        console.log("buyCourse -> response", response);
+        // console.log("buyCourse -> response", response);
         // sendPaymentSuccessEmail(response, orderResponse.data.amount, token);
         verifypament(response, cart, token);
       },
@@ -127,7 +128,7 @@ async function verifypament(response, cart, token) {
     //   }
     // );
 
-    const res = await axios.post("/api/v1/product/verifyPayment", {
+    const res = await axiosApi.post("/api/v1/product/verifyPayment", {
       razorpay_payment_id: response.razorpay_payment_id,
       razorpay_order_id: response.razorpay_order_id,
       razorpay_signature: response.razorpay_signature,
