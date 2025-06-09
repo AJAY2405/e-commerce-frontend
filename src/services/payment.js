@@ -51,7 +51,7 @@ export async function buyCourse(token, cart) {
     //   }
     // );
 
-    const orderResponse = await axios.post(
+    const orderResponse = await axiosApi.post(
       "/api/v1/product/capturePayment",
       cart
     );
