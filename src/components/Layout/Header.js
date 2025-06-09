@@ -28,7 +28,7 @@ const Header = () => {
         <div className="container-fluid">
           {/* Brand Always Visible */}
           <Link to="/" className="navbar-brand fw-bold text-nowrap">
-            🧊 <span className="d-none d-sm-inline">CRYSTAL CLEAR</span>
+            🧊 CRYSTAL CLEAR
           </Link>
 
           {/* Toggler */}
