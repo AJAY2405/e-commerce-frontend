@@ -47,14 +47,17 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
-      const { data } = axiosApi.post(
+       productData.append("shipping", shipping);
+      const res = await axiosApi.post(
         "/api/v1/product/create-product",
         productData
       );
-      if (data?.success) {
-        toast.error(data?.message);
-      } else {
+
+      console.log("res = ",res);
+      if (res?.data?.success) {
         toast.success("Product Created Successfully");
+      } else {
+        toast.error(res?.data?.message);
         navigate("/dashboard/admin/products");
       }
     } catch (error) {
@@ -74,7 +77,7 @@ const CreateProduct = () => {
             <h1>Create Product</h1>
             <div className="m-1 w-75">
               <Select
-                bordered={false}
+                variant="borderless"
                 placeholder="Select a category"
                 size="large"
                 showSearch
@@ -89,6 +92,7 @@ const CreateProduct = () => {
                   </Option>
                 ))}
               </Select>
+
               <div className="mb-3">
                 <label className="btn btn-outline-secondary col-md-12">
                   {photo ? photo.name : "Upload Photo"}
@@ -152,7 +156,7 @@ const CreateProduct = () => {
               </div>
               <div className="mb-3">
                 <Select
-                  bordered={false}
+                  variant="borderless"
                   placeholder="Select Shipping "
                   size="large"
                   showSearch

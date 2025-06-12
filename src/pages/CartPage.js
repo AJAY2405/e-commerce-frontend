@@ -20,7 +20,7 @@ const CartPage = () => {
   const [instance, setInstance] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
+  
   
   const getToken = async () => {
     try {

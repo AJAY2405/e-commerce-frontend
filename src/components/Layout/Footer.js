@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -14,24 +16,24 @@ const Footer = () => {
         <Link to="/policy" className="hover:underline">Privacy Policy</Link>
       </p>
 
-      <div className="text-center mt-4 flex justify-center space-x-6">
+      <div className="text-center mt-4 flex justify-center space-y-8">
         <a href="https://github.com/AJAY2405" target="_blank" rel="noopener noreferrer">
-          🐱 GitHub
+           <FaGithub className="hover:text-gray-700" /> Github
         </a>
         <a href="www.linkedin.com/in/ajay-sahani-464a38298" target="_blank" rel="noopener noreferrer">
-          🔗 LinkedIn
+           <FaLinkedin className="hover:text-blue-700" /> LinkedIn
         </a>
         <a href="mailto:ajay2411sahani@gmail.com">
-          📧 Gmail
+            <SiGmail className="hover:text-red-500" /> Gmail
         </a>
         <a href="https://x.com/AJAYSAHANI97389" target="_blank" rel="noopener noreferrer">
-          🐦 Twitter
+          <FaTwitter className="hover:text-sky-500" /> Twitter
         </a>
         <a href="https://facebook.com/yourfacebook" target="_blank" rel="noopener noreferrer">
-          📘 Facebook
+           <FaFacebook className="hover:text-blue-600" /> Facebook
         </a>
         <a href="https://instagram.com/yourinstagram" target="_blank" rel="noopener noreferrer">
-          📸 Instagram
+          <FaInstagram className=" hover:text-pink-600" /> Instagram
         </a>
       </div>
       <p className="text-center mt-4 text-sm">
