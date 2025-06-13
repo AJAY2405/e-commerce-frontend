@@ -41,7 +41,10 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axiosApi.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axiosApi.get(
+        `/api/v1/product/product-list/${page}`
+      );
+      console.log("data = ", data);
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -68,7 +71,9 @@ const HomePage = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axiosApi.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axiosApi.get(
+        `/api/v1/product/product-list/${page}`
+      );
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
@@ -111,11 +116,11 @@ const HomePage = () => {
     <Layout title={"ALl Products - Best offers "}>
       {/* banner image */}
       <img
-         src="/images/banner.png"
-         className="banner-img"
-         alt="bannerimage"
-         style={{ width: "100%", height: "220px", objectFit: "cover" }}
-         loading="lazy"
+        src="/images/banner.png"
+        className="banner-img"
+        alt="bannerimage"
+        style={{ width: "100%", height: "220px", objectFit: "cover" }}
+        loading="lazy"
       />
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">
@@ -157,7 +162,8 @@ const HomePage = () => {
             {products?.map((p) => (
               <div className="card m-2" key={p._id}>
                 <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
+                //update for the image problem
+                  src={`${p?.imageUrl}`}
                   className="card-img-top"
                   alt={p.name}
                 />
