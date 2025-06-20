@@ -116,8 +116,8 @@ const CartPage = () => {
                       src={`${p?.imageUrl}`}
                       className="card-img-top"
                       alt={p.name}
-                      width="100%"
-                      height="130px"
+                      width="80%"
+                      height="60%"
                     />
                   </div>
                   <div className="col-md-4">
