@@ -5,7 +5,7 @@ import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <div className="footer p-4 bg-gray-800 text-white">
+    <div className="footer p-4 bg-black-400 text-white">
       <h1 className="text-center text-lg font-bold">
         🧊Crystal Clear - Your Trusted Source for Quality Products
       </h1>

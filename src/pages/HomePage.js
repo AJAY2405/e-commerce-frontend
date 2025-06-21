@@ -119,8 +119,7 @@ const HomePage = () => {
         src="/images/banner.png"
         className="banner-img"
         alt="bannerimage"
-        style={{ width: "100%", height: "220px", objectFit: "cover" }}
-        loading="lazy"
+        width={"100%"}
       />
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">
@@ -137,7 +136,7 @@ const HomePage = () => {
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
+          <h4 className="text-center mt-4 ">Filter By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
@@ -149,7 +148,7 @@ const HomePage = () => {
           </div>
           <div className="d-flex flex-column">
             <button
-              className="btn btn-danger"
+              className="btn btn-danger mb-2 mt-3 "
               onClick={() => window.location.reload()}
             >
               RESET FILTERS
@@ -157,7 +156,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="col-md-9 ">
-          <h1 className="text-center">All Products</h1>
+          <h1 className="text-center text-black">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card m-2" key={p._id}>
