@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./../components/Layout/Layout";
-import axios from "axios";
+
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/ProductDetailsStyles.css";
 import axiosApi from "../services/axios";
@@ -46,10 +46,12 @@ const ProductDetails = () => {
       <div className="row container product-details">
         <div className="col-md-6">
           <img
-            src={`/api/v1/product/product-photo/${product._id}`}
+            // src={`/api/v1/product/product-photo/${product._id}`}/
+              src={product?.imageUrl}
+
             className="card-img-top"
             alt={product.name}
-            height="300"
+            height={"300px"}
             width={"350px"}
           />
         </div>
@@ -62,7 +64,7 @@ const ProductDetails = () => {
             Price :
             {product?.price?.toLocaleString("en-US", {
               style: "currency",
-              currency: "USD",
+              currency: "INR",
             })}
           </h6>
           <h6>Category : {product?.category?.name}</h6>
@@ -98,7 +100,7 @@ const ProductDetails = () => {
                   <h5 className="card-title card-price">
                     {p.price.toLocaleString("en-US", {
                       style: "currency",
-                      currency: "USD",
+                      currency: "INR",
                     })}
                   </h5>
                 </div>
