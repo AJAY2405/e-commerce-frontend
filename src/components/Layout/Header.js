@@ -6,6 +6,8 @@ import SearchInput from "../Form/SearchInput";
 import useCategory from "../../hooks/useCategory";
 import { useCart } from "../../context/cart";
 import { Badge } from "antd";
+import { HiShoppingBag } from "react-icons/hi2";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -28,7 +30,7 @@ const Header = () => {
         <div className="container-fluid">
           {/* Brand Always Visible */}
           <Link to="/" className="navbar-brand fw-bold text-nowrap">
-            🧊 CRYSTAL CLEAR
+         <FaShoppingCart size={36} /> CRYSTAL CLEAR
           </Link>
 
           {/* Toggler */}
