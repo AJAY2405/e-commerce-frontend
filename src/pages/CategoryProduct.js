@@ -36,7 +36,7 @@ const CategoryProduct = () => {
               {products?.map((p) => (
                 <div className="card m-2" key={p._id}>
                   <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
+                    src={`${p?.imageUrl}`}
                     className="card-img-top"
                     alt={p.name}
                   />
@@ -46,7 +46,7 @@ const CategoryProduct = () => {
                       <h5 className="card-title card-price">
                         {p.price.toLocaleString("en-US", {
                           style: "currency",
-                          currency: "USD",
+                          currency: "INR",
                         })}
                       </h5>
                     </div>

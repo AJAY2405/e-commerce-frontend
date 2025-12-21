@@ -17,7 +17,7 @@ const Search = () => {
             {values?.results.map((p) => (
               <div className="card m-2" style={{ width: "18rem" }}>
                 <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
+                  src={`${p?.imageUrl}`}
                   className="card-img-top"
                   alt={p.name}
                 />
@@ -26,7 +26,7 @@ const Search = () => {
                   <p className="card-text">
                     {p.description.substring(0, 30)}...
                   </p>
-                  <p className="card-text"> $ {p.price}</p>
+                  <p className="card-text"> Rs. {p.price}</p>
                   <button class="btn btn-primary ms-1">More Details</button>
                   <button class="btn btn-secondary ms-1">ADD TO CART</button>
                 </div>
