@@ -46,7 +46,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <p className="footer-copy">
-        © {new Date().getFullYear()} Crystal Clear ·
+        © {new Date().getFullYear()} Crystal Clear · Built by Ajay Sahani
       </p>
 
       {/* Inline CSS */}
